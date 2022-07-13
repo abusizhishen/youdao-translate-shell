@@ -5,12 +5,13 @@ import (
 	"fmt"
 	"io/ioutil"
 	"net/http"
+	"net/url"
 	"os"
 )
 
 func Translate(word string) {
-	url := "https://dict.youdao.com/suggest?num=5&ver=3.0&doctype=json&cache=false&le=en&q=" + word
-	resp, err := http.Get(url)
+	ur := "https://dict.youdao.com/suggest?num=5&ver=3.0&doctype=json&le=en&q=" + url.QueryEscape(word)
+	resp, err := http.Get(ur)
 	errCheck(err)
 
 	defer resp.Body.Close()
