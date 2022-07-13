@@ -1,5 +1,9 @@
 ## 有道词典命令行翻译工具
 
+### install
+```shell
+go install cmd/translate.go
+```
 # todo
 - [ ] 登录
 - [ ] 加入单词本
